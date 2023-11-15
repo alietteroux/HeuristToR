@@ -1,0 +1,628 @@
+---
+output:
+  md_document:
+    toc: true
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "100%"
+)
+devtools::load_all(".")
+```
+
+# HeuristToR
+
+*HeuristToR* aims to make easier quantitative analysis from  [Heurist databases](https://heuristnetwork.org/). 
+
+# Installation
+
+You can install the development version of HeuristToR from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("alietteroux/HeuristToR")
+```
+
+$~$
+
+# Before using HeuristToR : export XML files from Heurist
+
+*hr_import()* reads XML files exported from Heurist. To use it, **two XML files must be first exported from Heurist** : 
+
+- a XML file including data (fields'values entered in the database) : this XML file can be exported from Heurist via the *Explore* menu > *Export* > *XML*. Be careful : if some records are selected in your Heurist session during the export, only data about theses selected records may be exported.
+- a XML file exported from Heurist describing database structure (vocabularies, fields'caracteristics...) : this XML file can be exported from Heurist via the *Design* menu > *Download* > *Structure (XML)*. This should open a window looking **like below** : if not, please wait a few seconds or try with another web browser. Then, click with the right mouse button to save as XML.
+
+<img src="man/figures/scanprint_export_structure.png" height="220" style="height:240px;">
+
+$~$
+
+# Example database and data files
+
+We've created a fictitious Heurist database, named "aliet_test_R", viewable at [https://heurist.huma-num.fr/heurist/?db=aliet_test_R&website](https://heurist.huma-num.fr/heurist/?db=aliet_test_R&website)
+
+From this database, we've exported two XML files : have a look to the folder "documents/data_example" of the [Github repository](https://github.com/alietteroux/HeuristToR), or directly download these files [here](https://uncloud.univ-nantes.fr/index.php/s/b5wAr3eHJPcmXAX).
+
+$~$
+
+# Read data and paradata from Heurist database, with *hr_import()* function
+
+```{r hr_import}
+library(HeuristToR)
+
+hr_import(data.file="documents/data_example/aliet_test_R_data.xml",
+          structure.file="documents/data_example/aliet_test_R_structure.xml")
+```
+
+This function returns several dataframes in the Environment :
+
+- Each Heurist *'record type'* as a dataframe : in those dataframes, each row matches a Heurist *'record'*
+- A dataframe named "**z.h.tables.fields**" : each row describes a field in an used Heurist *'record type'* (type, help text, requirement, repeatability...)
+- A dataframe named "**z.h.vocabularies**" : each row matches a term in an used Heurist vocabulary ; each term is joined to a level (its ranking position in the vocabulary) and attached to its parents'terms
+
+**If *hr_import()* returns error messages when you'll try it**, please [contact us](mailto:aliette.roux@univ-nantes.fr).
+
+With our example from [this Heurist database (named "aliet_test_R")](https://heurist.huma-num.fr/heurist/?db=aliet_test_R&website), we've obtained 8 dataframes :
+
+<img src="man/figures/scanprint_environment_example.png" height="200" style="height:220px;">
+
+**If *hr_import()* has taken a long time**, remember that you can save all objects of the environment in a folder, and open all of them afterwards (see below, last part of this page).
+
+**If you're interested by the function code** : *hr_import()* reads XML files but, actually, the function script uses *readLines()* to read them. Indeed, it seems that R is slow to parse XML files, and yet XML Heurist files can be very big ! Therefore, the code may seem convoluted, using regular expressions and different functions to recover XML structure. Note that previously, I had proposed an other solution using *xml2* library, retrievable in the folder "documents" of the [Github repository](https://github.com/alietteroux/HeuristToR), file "*archive_import_Heurist_dans_R_via_XML*". I had to give it up because it was too slow...
+
+Thereafter, we'll manage data using *tidyr* and *ggplot2* ; and we'll display tables with *knitr::kable()*.
+
+```{r tidyverse, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(knitr)
+```
+
+$~$
+
+## About columns names and formats
+
+Let's have a look to the dataframe *Personne* (6 rows and 24 columns) :
+
+```{r Names.Personne}
+Personne %>% kable()
+```
+
+Rows are ordered according to the column starting with "z.h.id.". These numbers match records IDs automatically created by Heurist ; they depend on the date added. 
+
+We look at column names and formats :
+
+```{r Names.and.formats}
+data.frame(colname=names(Personne),
+           format=as.character(sapply(Personne, class))) %>%
+  kable()
+```
+
+Note that :
+
+- Each dataframe contains **"paradata" fields : fields starting with "z.h."**. The column starting with "z.h.title" corresponds to "Heurist title masks".
+- **Colnames are "display fields names" in Heurist forms** (and not database fields names). Therefore, some columns may have the same name : it's possible if the contributor has renamed an existing field with a name already present in the database (like "Nom" in our example). In such cases, *hr_import()* automatically adds a position number to those names (see *Nom_1* and *Nom_2* in our example).
+- *Temporal*, *spatial* and *file* fields are declined to several columns : see below, part "Dealing with *temporal*, *spatial* and *file* fields". 
+- All columns are **character**, except :
+
+  - some paradata fields (*z.h.visibility*, *z.h.visnote*, *z.h.workgroup*, *z.h.workgroup.id*) : **factor**
+  - fields of type "enum" or "relationtype" (see the column *field.type* of the dataframe *z.h.tables.fields*) when they are not "repeatable" (see the column *field.MaxValues* of the dataframe *z.h.tables.fields*) : **factor** (like *Sexe* in our example)
+  - fields ending by ".temporal.type", describing records values of *spatial* fields : **factor**
+  - fields of type "float" (see the column *field.type* of the dataframe *z.h.tables.fields*) when they are not "repeatable" (see the column *field.MaxValues* of the dataframe *z.h.tables.fields*) : **numeric** (like *Nombre de publications* in our example). 
+ 
+Then, we're abble to know levels of "enum" fields ; and to perform arithmetic on "float" fields :
+
+```{r Summary}
+levels(Personne$Sexe)
+summary(Personne$`Nombre de publications`)
+```
+
+$~$
+
+
+## Dealing with "repeatable" fields (multiple values in a field for one record)
+
+"Repetable" fields match a value not equal to 1 in the column *field.MaxValues* of the dataframe *z.h.tables.fields*. Let's have a look to "repeatable" fields of tables *Laboratoire*,*Objet* and *Personne* :
+
+```{r Reap.Fields}
+z.h.tables.fields %>%
+  filter(table.name %in% c("Laboratoire","Objet","Personne") &
+           field.MaxValues!=1) %>%
+  select(table.name,field.DisplayName,field.type) %>%
+  kable()
+```
+
+As the column *Discipline(s)* of the table *Laboratoire* appears to be a "repeatable" field, we have a look to its records :
+
+```{r Reap.Look.Lab}
+Laboratoire %>% 
+  select(z.h.title.Laboratoire,`Discipline(s)`) %>%
+  kable()
+```
+
+Usign *hr_import()*, all different values of a "repeatable" field for one record are separated by " // ". 
+
+We can count records in two different ways :
+
+- looking at combinations of terms (see option A below) ;
+- looking at terms only (see option B below) : in this case, we use the *separate_rows()* function of *tidyr*. 
+
+```{r Reap.Treat.Lab}
+# Option A
+Laboratoire %>% 
+  count(`Discipline(s)`) %>%
+  kable()
+
+# Option B
+Laboratoire %>% 
+  separate_rows(`Discipline(s)`,sep= " // ") %>%
+  count(`Discipline(s)`) %>%
+  kable()
+```
+
+We also use *separate_rows()* if we'd like to know which objects have been discovered by the different researchers (table *Personne.Objet*). Then, we're abble to count discovered objects per researcher. 
+
+```{r Reap.Treat.PersObj, warning=FALSE}
+Objet %>% select(z.h.id.Objet,`Découvreur(s)`) %>%
+  kable()
+
+Personne.Objet <- Personne %>% 
+  select(z.h.id.Personne,z.h.title.Personne) %>%
+  left_join(Objet %>%
+              select(z.h.id.Objet,`Découvreur(s)`) %>%
+              separate_rows(`Découvreur(s)`,sep=" // "),
+            by=c("z.h.id.Personne"="Découvreur(s)"))
+Personne.Objet %>% kable()
+
+Personne.Objet %>% 
+  group_by(z.h.title.Personne) %>%
+  summarise(nb.objets=sum(!is.na(z.h.id.Objet))) %>%
+  arrange(desc(nb.objets)) %>%
+  kable()
+```
+
+$~$
+
+## Columns "z.h.reversePointer"
+
+Since 2023, it has been being ***z.h.reversePointer*** columns in "target dataframes". These columns report IDs of related entities. There are two types of "target dataframes" :
+
+- "target dataframes" corresponding to ***resource fields*** ;
+- "target dataframes" corresponding to ***children records***. 
+
+### "Target dataframes" corresponding to *resource fields*
+
+In our example, there are 7 Heurist'*fields* of type *resource* : in Heurist'environment, each of them is of type '*Record pointer*'. For example :
+
+- field *Lieu de la trouvaille* (table *Objet*) → table *Place* (target)
+- field *Découvreur(s)* (table *Objet*) → table *Personne* (target)
+
+```{r reversePointer.list.resource}
+z.h.tables.fields %>% 
+  filter(field.type=="resource") %>%
+  select(table.name,field.DisplayName,field.type) %>%
+  kable()
+```
+
+Then (for example), the dataframe *Personne* contains a *z.h.reversePointer* listing discovered objects. *Lou Ragan* has discovered two objects : ID-61 and ID-73 ; et l'objet ID-69 a été découvert par *Sandra Lacouverture* et *Edgar Letracteur* (see below). 
+
+```{r reversePointer.Personne}
+Personne %>% 
+  select(z.h.id.Personne,z.h.title.Personne,z.h.reversePointer) %>%
+  kable()
+
+Objet %>% select(z.h.id.Objet,z.h.title.Objet,`Découvreur(s)`) %>% kable()
+```
+
+
+### "Target dataframes" corresponding to *children records*
+
+A type of information hasn't been well traced yet by the *HeuristToR* package : it's not so easy to recover *"children" fields* ! In our example, the dataframe "*Objet - Exposition*" gathers "children" of the field *Expositions* (table *Objet*). Therefore,  the dataframe "*Objet - Exposition*" contains a *z.h.reversePointer* listing "parents"'objects. The column *z.h.reversePointer* of a "child" dataframe is necessarily **not** "repeatable". 
+
+```{r reversePointer.Expositions}
+Objet %>% select(z.h.id.Objet,Expositions) %>% kable()
+`Objet - Exposition` %>% select(`z.h.id.Objet - Exposition`,z.h.reversePointer) %>% kable()
+```
+
+$~$
+
+## Gathering terms in a vocabulary
+
+"Terms list" fields match a value "*enum*" in the column *field.type* of the dataframe *z.h.tables.fields*. To have a look at only informed fields (and not empty fields), we select only fields matching a value "*no empty*" in the column *field.empty* of *z.h.tables.fields*. 
+
+```{r Terms.Fields}
+z.h.tables.fields %>%
+  filter(field.type=="enum" & field.empty=="no empty") %>%
+  select(table.name,field.DisplayName,field.type) %>%
+  kable()
+```
+
+As the column *Type d'objet* of the table *Objet* appears to be a "terms list" field, we count records per term :
+
+```{r Terms.Objet.Default}
+Objet %>% count(`Type d'objet`) %>% kable()
+```
+
+Actually, these terms are nested. To have a look to this vocabulary structure (or "tree"), we select rows of *z.h.vocabularies* for which *field.JsonTermIDTree* is the one of the field "Type d'objet" described in *z.h.tables.fields*. 
+
+```{r Terms.Look.Objet}
+voc <- z.h.vocabularies %>% 
+  semi_join(z.h.tables.fields %>% 
+              filter(field.DisplayName=="Type d'objet"),
+            by="field.JsonTermIDTree") 
+voc %>% kable()
+```
+
+We see this vocabulary is named "Type d'objets vocab" (see column *Level1*) and is composed of 4 levels (see column *maxLevel*). 
+
+In following lines, we gather terms to "Level3", then "Level2". 
+
+```{r Terms.Treat.Objet}
+# Gathering to "Level 3"
+Objet %>% count(`Type d'objet`) %>%
+  left_join(voc,by=c("Type d'objet"="trm_Label")) %>%
+  group_by(Level3) %>% summarise(nb=sum(n)) %>%
+  kable()
+
+# Gathering to "Level 2"
+Objet %>% count(`Type d'objet`) %>%
+  left_join(voc,by=c("Type d'objet"="trm_Label")) %>%
+  group_by(Level2) %>% summarise(nb=sum(n)) %>%
+  kable()
+```
+
+$~$
+
+## Dealing with "Record relationship"
+
+### "Relationship marker" fields
+
+"Relationship marker" fields match a value "*relmarker*" in the column *field.type* of the dataframe *z.h.tables.fields*. Let's have a look to "relation markers" used in this database :
+
+```{r RS.Fields}
+z.h.tables.fields %>%
+  filter(field.type=="relmarker") %>%
+  select(table.name,field.DisplayName,field.type) %>%
+  kable()
+```
+
+We see that the contributor had created 2 "relationship marker" fields in "Personne" : this usage is not recommended because it may create problems while viewing records in Heurist. It's not recommended, but it does exist ! 
+
+In the XML data file, all values of "relationship marker" fields are only informed as "relationship" : we can recover the table it belongs to, but  we can't recover the field it belongs to (when 2 "relationship marker" fields have been created in a same "record type"). 
+
+Therefore, *hr_import()* function automatically creates one and unique "relationship marker" field in a table : this field match a column finishing by "*.relationship*". Let's have a look to the dataframe *Personne* :
+
+```{r RS.Fields.Pers}
+names(Personne)
+```
+
+### "Relation" vocabularies
+
+"Relationship marker" fields necessarily use a vocabulary. Those vocabularies match a value "*relation*" in the column *trm_Domain* of the dataframe *z.h.vocabularies*. Let's have a look to the different vocabularies (*Level1*) used in "relationship marker" fields :
+
+```{r RS.Terms}
+z.h.vocabularies %>% 
+  filter(trm_Domain=="relation") %>%
+  distinct(Level1) %>%
+  kable()
+```
+
+### "Record relationship" dataframe
+
+When a contributor informs a "relationship" via a "relationship marker" in Heurist, an inverse relation is automatically created in Heurist reports. But in the XML data file, it seems we can only recover recorded relations and not their inverses (it did in January 2023 ; I haven't had time to ckeck it in November 2023). 
+
+*hr_import()* duplicates each relationship of the original table : for each relationship from A to B, *hr_import()* automatically creates a relationship from B to A.
+
+"Original" relationships and their "created" inverses can be distinguished by the column *z.h.original* of the dataframe *Record relationship*. Then, if you want uniquely treat "original" relationships, you can filter records on this column. 
+
+Let's have a look to relationship records regarding family links (*Level1*=="*4. Family*"). 
+
+```{r RS.Look.Family}
+`Record relationship` %>%
+  inner_join(z.h.vocabularies %>%
+               filter(Level1=="4. Family"),
+             by=c("Relationship type"="trm_Label")) %>%
+  select(`z.h.id.Record relationship`,`Source record`,`Target record`,`Relationship type`,z.h.original) %>%
+  kable()
+```
+
+We see that the contributor had informed "id-60 IsSonOf id-47" ; *hr_import()* function has automatically created its opposite ("id_47 IsParentOf id-60"), using inverse terms retrievable in *z.h.vocabularies*. 
+
+Let's have a look to all relationships regarding "id-47" person :
+
+```{r RS.Look.Pers47RS, warning=FALSE}
+Personne %>% 
+  filter(z.h.id.Personne=="47") %>% 
+  inner_join(`Record relationship`,
+             by=c("z.h.id.Personne"="Source record")) %>%
+  select(z.h.id.Personne,Nom_1,Prénom,
+         `z.h.id.Record relationship`,`Relationship type`,
+         `Target record`,z.h.original) %>%
+  kable()
+```
+
+We obtain 3 relationships : it matches content of the "relmarker" field of the dataframe *Personne* (column *Carrière & Parentèle.relationship*).  
+
+```{r RS.Look.Pers47Pers, warning=FALSE}
+Personne %>% 
+  filter(z.h.id.Personne=="47") %>%
+  select(z.h.id.Personne,`Carrière & Parentèle.relationship`) %>%
+  kable()
+```
+
+**Please note** : in the previous example, we've only used the column *z.h.id.Personne* of the dataframe *Personne*, and not the column *Carrière & Parentèle.relationship* of the dataframe *Personne*. Indeed, if we had joined by this column, each relation would have been duplicated. 
+
+$~$
+
+## Dealing with "Place"
+
+Since 2023, the dataframe *Place* (corresponding to the eponymous ‘record type’) has contained a column named ***z.h.reversePointer***. This column reports ID of related entities. 
+
+For instance, let’s see where objects (dataframe *Objet*) have been found (field '*Lieu de la trouvaille*' referring to *Place*) :
+
+```{r Objet.to.Place}
+Objet %>% 
+  select(z.h.id.Objet,z.h.title.Objet,`Lieu de la trouvaille`) %>%
+  kable()
+```
+
+We find these values of *z.h.id.Objet* in the field *z.h.reversePointer* of the dataframe *Place* :
+
+```{r Place.reversePointer}
+Place %>%
+  select(z.h.id.Place,z.h.title.Place,z.h.reversePointer) %>%
+  kable()
+```
+
+Normally, the dataframe *Place* contains a field of type "geo" : how to deal with this field ? See below, "*Dealing with temporal, spatial and file fields*". 
+
+$~$
+
+## Dealing with *temporal*, *spatial* and *file* fields
+
+We name "temporal, spatial and file fields" the values informed in fields (or "detail types" in Heurist language) of type "date", "geo" or "file". 
+
+These fields match a value "*date*", "*geo*" or "*file*" in the column *field.type* of the dataframe *z.h.tables.fields*. To have a look at only informed fields (and not empty fields), we select only fields matching a value "*no empty*" in the column *field.empty* of *z.h.tables.fields*. 
+
+```{r TempSpatFile}
+z.h.tables.fields %>% 
+  filter(field.type %in% c("date","geo","file") & 
+           field.empty=="no empty") %>%
+  select(table.name,field.DisplayName,field.type) %>%
+  arrange(table.name,field.type) %>%
+  kable()
+```
+
+### *Temporal* fields
+
+There are different types of "temporal" fields :
+
+- **C14 Date** : if the Heurist contributor has clicked on the symbol "clock", then *Radiometric* tab ;
+- **Date Range** : if the Heurist contributor has clicked on the symbol "clock", then *Fuzzy Range* tab ;
+- **Approximate Date** : if the Heurist contributor has clicked on the symbol "clock", then *Simple Range* tab ;
+- **Not indexed** : if the Heurist contributor hasn't clicked on the symbol "clock" or "calendar", and if the value is unlike "YYYY-MM-DD" (or "YYYY-MM" or "YYYY") ;
+- **Simple Date** and **Other Date** : actually, since a Heurist's update in 2023, I've not understood the difference beetween them... Unlike *Other Dates*, *Simple Dates* are defined through a **\<temporal\> tag in the Heurist XML export**. In November 2023, some actions certainly create \<temporal\> tags : if we click on the symbol "clock" AND\ THEN whe choose 'Type of Determination' OR define a 'Simple Range', 'Fuzzy Range' or 'Radiometric'. But sometimes, when the value looks like "YYYY-MM-DD" or "YYYY", a \<temporal\> tag appears whereas these actions have not been taken. However, writing a value like "YYYY-MM-DD" or "YYYY" does not systematically create a \<temporal\> tag ! <span style="color:grey"> Before 2023, a "temporal field" without any \<temporal\> tag meant that the contributor had never clicked on clock or calendar symbols for this field, and then we used to inform "Manual Date" instead of "Other Date".</span>
+
+"Temporal" fields are declined into several columns according to the "temporal.type" of the value in the original XML file. 
+
+For example, in the dataframe *Personne*, values of *Date de naissance* have been recorded by three ways :
+
+- manually, without following the "YYYY-MM-DD" format (= "***Not indexed***")
+- following the "YYYY-MM-DD" (or "YYYY" or "YYYY-MM") format (= "***Simple Date***" and "***Other Date***")
+
+```{r Temp.Look.DAT}
+# Count "temporal.type"
+Personne %>% count(`Date de naissance.temporal.type`) %>% 
+  kable()
+
+# Colnames
+names(Personne)[grepl("^Date de naissance.+",names(Personne))]
+```
+
+```{r Temp.Look.DAT.Records}
+# Records
+Personne %>% 
+  select(z.h.title.Personne,starts_with("Date de naissance")) %>%
+  kable()
+```
+
+Columns containing "**.DAT.**" are only informed for "*Simple Dates*", "*Approximate Dates*" and "*Other Dates*" (N.B : columns ending with "**.DAT.raw**" are only informed for "*Simple Dates*" and "*Approximate Dates*"). 
+
+If we want to transform "temporal" fields into "date vectors", we have to be careful : 
+
+- some values can **not** refer to a "numeric" date (example : "Printemps 1960") - that's why it's important to distinguish "Not indexed" dates ;
+- "Other Dates" formats can be different : some of those can refer to a specific day, others to a month, others to a year...
+
+In following lines, we choose to consider the first day of the first month, when day or month are not informed. 
+
+```{r Temp.Treat.DAT.2}
+Personne %>% 
+  mutate_at(vars(`Date de naissance.DAT.month`,
+                 `Date de naissance.DAT.day`),
+            replace_na,"01") %>%
+  mutate(date_naiss = as.Date(str_c(`Date de naissance.DAT.year`,
+                                `Date de naissance.DAT.month`,
+                                `Date de naissance.DAT.day`,
+                                sep="-"))) %>%
+  select(z.h.title.Personne,date_naiss) %>%
+  arrange(date_naiss) %>%
+  kable()
+```
+
+In the dataframe *Objet*, values of *Date de création* have been recorded by three ways : "Approximate Date", "C14 Date" and "Date range" (see below).  
+
+```{r Temp.Look.Objet.1}
+Objet %>% count(`Date de création.temporal.type`) %>% kable()
+```
+
+Therefore, *Date de création* is declined into several columns :
+
+- *TPQ* (Terminus Post-Quem),*PDB* (Probable Date Begin),*PDE* (Probable Date End) and *TAQ* (Terminus Ante-Quem) deal with "***Date Range***" ;
+- *BCE* (Before Current Era),*BDP* (Before Present),*DEV* (Std dev), *DVP* (Pos Dev) and *DVN* (Neg Dev) deal with "***C14 Date***" ;
+- *DAT* (Date) and *RNG* (Range) deal with "***Approximate Date***".
+
+```{r Temp.Look.Objet.2}
+# Colnames
+names(Objet)[grepl("^Date de création.+",names(Objet))]
+
+# Records
+Objet %>% 
+  select(z.h.title.Objet,starts_with("Date de création")) %>%
+  kable()
+```
+
+Values of "temporal" fields can be described by several columns specifying "year", "month", "day" (see above *Date de naissance*), but also "hours", "minutes" and "seconds". For example, *End date* in the dataframe *Objet Exposition* :
+
+```{r Temp.Look.Expos}
+# Colnames
+names(`Objet - Exposition`)[grepl("^End date.+",names(`Objet - Exposition`))]
+
+# Records
+`Objet - Exposition` %>% 
+  select(`z.h.id.Objet - Exposition`,starts_with("End date")) %>%
+  kable()
+```
+
+N.B : Values of "raw" for dates have been modified in 2023, as a result of a Heurist’s update. See below some examples of changes :
+
+```{r modifs.dates.ex, echo=F}
+modif.dates.ex <- data.frame(
+  temporal.type=c("Date Range","Date Range","C14 Date"),
+  `Before 2023`=c("VER=1|TYP=p|TPQ=2012-10-15|TAQ=2015-05-03|DET=0|CLD=Gregorian|SPF=0|EPF=0","VER=1|TYP=p|PDB=1740|PDE=1760|TPQ=1700|TAQ=1800|DET=0|CLD=Gregorian|SPF=0|EPF=0","VER=1|TYP=c|BCE=1700|DEV=P100Y|DET=0|COD=blabla"),
+  `After a Heurist's update in 2023`=c("{\"start\":{\"earliest\":\"2012-10-15\"},\"end\":{\"latest\":\"2015-05-03\"},\"estMinDate\":2012.1015,\"estMaxDate\":2015.0503}","{\"start\":{\"earliest\":\"1700\",\"latest\":\"1740\"},\"end\":{\"latest\":\"1800\",\"earliest\":\"1760\"},\"estMinDate\":1700,\"estMaxDate\":1800.1231}","{\"timestamp\":{\"in\":-1700,\"type\":\"c\",\"bp\":false,\"deviation\":\"P100Y\"},\"native\":\"1700 BCE\",\"labcode\":\"blabla\",\"estMinDate\":-1800,\"estMaxDate\":-1600}")
+)
+names(modif.dates.ex) <- c("temporal.type",
+                           "Before 2023",
+                           "After a Heurist's update in 2023")
+modif.dates.ex %>% kable()
+```
+
+It seems that the format "*Before 2023*" remains for some dates that, after a Heurist’update, have become not indexed. See this example below :
+
+<img src="man/figures/scanprint_not_indexed_date.png" height="200" style="height:220px;">
+
+### *Spatial* fields
+
+"Spatial" fields are always declined into 2 columns :
+
+- one finishing by **".geo.type"**
+- one finishing by **".geo.wkt"**
+
+Let's have a look with *Location (mappable)* of the dataframe *Place* :
+
+```{r Spat.Look}
+# Colnames
+names(Place)[grepl("^Location \\(mappable\\).+",names(Place))]
+
+# Records
+Place %>% 
+  select(z.h.title.Place,starts_with("Location (mappable)")) %>%
+  kable()
+```
+
+Using *sf* package, we're abble to cartography a "spatial field" of type "point" by this way :
+
+```{r Spat.Plot, echo=T, eval=F}
+library(sf)
+
+# Creating a sf object with sf::st_as_sf()
+sf_Place_point <- Place %>%
+  filter(`Location (mappable).geo.type`=="point") %>%
+  rename("geom"="Location (mappable).geo.wkt") %>%
+  st_as_sf(wkt = "geom",crs = st_crs(4326))
+
+# Plotting with ggplot2
+sf_Place_point %>%
+  ggplot() +
+  geom_sf(col="red") +
+  geom_sf_label(aes(label=z.h.title.Place,hjust=0, vjust = 1), 
+               col="red",size=2.7)
+```
+
+<img src="man/figures/Spat_Plot_pourRM.png" height="220" style="height:240px;">
+
+$~$
+
+
+### *File* fields
+
+"File" fields may be declined into several columns describing file paradata.
+
+Let's have a look with *Logo* of the dataframe *Laboratoire* :
+
+```{r File}
+# Colnames
+names(Laboratoire)[grepl("^Logo.+",names(Laboratoire))]
+
+# Records
+Laboratoire %>% 
+  select(z.h.title.Laboratoire,starts_with("Logo")) %>%
+  kable()
+```
+
+When you click on the URL (column *Logo.file.URL*), the file appears in a new window.
+
+$~$
+
+# Renaming tables and columns - if desired
+
+To avoid using this symbol **`** in R, remember that you can easily remove spaces, dashes, slashes, commas, quotations marks, ampersands and parenthesis from colnames and dataframes names. Indeed, if "TRUE", the argument ***rename.tab.col*** of the *hr_import* function replaces these characters by dots. 
+
+```{r Rename.keep.Objet,echo=F}
+rm(list=setdiff(ls(), "Objet"))
+Objet.before <- Objet
+rm(Objet)
+```
+
+
+```{r Rename.Import2}
+hr_import(data.file="documents/data_example/aliet_test_R_data.xml",
+          structure.file="documents/data_example/aliet_test_R_structure.xml",
+          rename.tab.col=TRUE)
+```
+Dataframes names :
+
+```{r Rename.colnames, eval=F, echo=T}
+ls()
+```
+
+```{r Rename.Hide, eval=T, echo=F}
+setdiff(ls(), "Objet.before")
+```
+
+
+And for instance, colnames of *Objet* when *rename.tab.col=F* and *rename.tab.col=T* :
+
+```{r Rename.Compare, echo=F}
+compare.colnames <- data.frame(
+  "rename.tab.col = F" = names(Objet.before),
+  "rename.tab.col = T" = names(Objet)
+) 
+names(compare.colnames) <- c("rename.tab.col = F","rename.tab.col = T")
+compare.colnames %>% 
+  filter(`rename.tab.col = F`!=`rename.tab.col = T`) %>%
+  filter(!grepl("Date de création",`rename.tab.col = F`)) %>%
+  kable()
+```
+
+**Please note** : The parameter *rename.tab.col=TRUE* creates two additional columns in the dataframe *z.h.tables.fields* : ***table.name.renamed*** and ***field.renamed***.
+
+```{r Rename.z.h.tables.fields}
+z.h.tables.fields %>% filter(table.name=="Objet") %>%
+  select(table.name,field.DisplayName,table.name.renamed,field.renamed) %>%
+  kable()
+```
+
+
+# Saving data into a R data file
+
+**If *hr_import()* has taken a long time**, remember that you can save your workspace to a file named *.RData*, and quickly restore it. We give an example in following lines (we'd like to save all objects of the enviroment in a folder named "export") :
+
+```r
+# Saving all objects of the environment
+save.image(file = "export/aliet_test_R.RData")
+# Restoring all of these objects
+load("export/aliet_test_R.RData")
+```
+

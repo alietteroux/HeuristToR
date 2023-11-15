@@ -4,12 +4,21 @@
 \name{HeuristToR-package}
 \alias{HeuristToR}
 \alias{HeuristToR-package}
-\title{HeuristToR: What the Package Does (One Line, Title Case)}
+\title{HeuristToR: To make easier quantitative analysis from Heurist databases}
 \description{
-What the package does (one paragraph).
+So far, this package contains only one function : hr_import(). This function reads XML files exported from Heurist (https://heuristnetwork.org/) to build as many dataframes as 'record types' are used in the Heurist database. Each Heurist 'record type' matches a dataframe ; each Heurist 'record' matches a row in a dataframe. Furthermore, this function builds two other dataframes describing fields (type, help text, requirement, repeatability...) and vocabularies.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/alietteroux/HeuristToR}
+  \item \url{https://alietteroux.github.io/HeuristToR/}
+  \item Report bugs at \url{https://github.com/alietteroux/HeuristToR/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Aliette Roux \email{aliette.roux@univ-nantes.fr}
 
 }
 \keyword{internal}

@@ -1,12 +1,12 @@
 Package: HeuristToR
-Title: What the Package Does (One Line, Title Case)
+Title: To make easier quantitative analysis from Heurist databases
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R: person("Aliette", "Roux", email = "aliette.roux@univ-nantes.fr",role = c("aut", "cre"))
+Description: So far, this package contains only one function : hr_import(). This function reads XML files exported from Heurist (https://heuristnetwork.org/) to build as many dataframes as 'record types' are used in the Heurist database. Each Heurist 'record type' matches a dataframe ; each Heurist 'record' matches a row in a dataframe. Furthermore, this function builds two other dataframes describing fields (type, help text, requirement, repeatability...) and vocabularies.
+License: GPL (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+URL: https://github.com/alietteroux/HeuristToR,
+    https://alietteroux.github.io/HeuristToR/
+BugReports: https://github.com/alietteroux/HeuristToR/issues

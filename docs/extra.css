@@ -1,0 +1,26 @@
+<style>
+  table {
+	  border-spacing: 0px;
+	  border-collapse: collapse;
+  }
+  thead th:nth-child(1n) {
+    white-space: nowrap; 
+	font-family: Arial; 
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #ccccff;
+	}
+  td:nth-child(1n) {
+    white-space: nowrap; 
+	font-size: 8pt;
+	font-family: Arial; 
+	border-left: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+  }
+  tr:nth-child(2n) {
+	  background-color: #ededed;
+	}
+tr{
+	line-height:15%;
+}
+</style>
