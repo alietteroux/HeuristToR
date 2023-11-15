@@ -1,0 +1,1075 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hml xmlns="http://heuristnetwork.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://heuristnetwork.org/documentation_and_templates/scheme_hml.xsd">
+<database id="0">aliet_test_R</database>
+<query q="sortby:-m" db="aliet_test_R" depth="0"/>
+<dateStamp>2023-11-10T13:36:07+00:00</dateStamp>
+<resultCount>37</resultCount>
+<records>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>71</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=71&amp;db=aliet_test_R</citeAs>
+<title>Sandra &lt;b&gt;Lacouverture&lt;/b&gt;
+(1987)
+Female | est membre du 15 Jan 2015 - 2019 &gt; LRO - Laboratoire de Recherche d'Objets</title>
+<added>2023-01-19 14:31:36</added>
+<modified>2023-11-10 14:34:22</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">55</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">59</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2015-01-15</raw>
+<year>2015</year>
+<month>1</month>
+<day>15</day>
+</detail>
+<detail conceptID="2-11" name="End date/time" id="11" basename="End date">
+<raw>2019</raw>
+<year>2019</year>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>59</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=59&amp;db=aliet_test_R</citeAs>
+<title>Sandra &lt;b&gt;Lacouverture&lt;/b&gt;
+(1987)
+Female</title>
+<added>2023-01-19 14:13:59</added>
+<modified>2023-11-10 14:34:22</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Lacouverture</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Sandra</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>1987</raw>
+<year>1987</year>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.152043 46.159113)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="415" termConceptID="2-415" ParentTerm="Gender">Female</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">16</detail>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">69</reversePointer>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">75</reversePointer>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">114</reversePointer>
+<relationship termID="9518" relatedRecordID="55" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">71</relationship>
+<relationship useInverse="1" termID="9519" relatedRecordID="108" term="comprend" termConceptID="0-9519" inverse="est membre du" invTermID="9518" invTermConceptID="0-9518">109</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>109</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=109&amp;db=aliet_test_R</citeAs>
+<title>OT - Objets Toujours | comprend 2019 - &gt; Sandra &lt;b&gt;Lacouverture&lt;/b&gt;
+(1987)
+Female</title>
+<added>2023-02-20 07:15:33</added>
+<modified>2023-11-10 14:34:22</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">59</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9519" termConceptID="0-9519" ParentTerm="0. My relationships">comprend</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">108</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2019</raw>
+<year>2019</year>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>73</id>
+<type id="103" conceptID="0000-103">Objet</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=73&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;Utilitaires.Jardinage&lt;/i&gt; (50 BCE-200 years +100 years)
+Trouvé le 15 Oct 2012 à Beaulieu, Mareuil-sur-Lay</title>
+<added>2023-01-19 14:38:11</added>
+<modified>2023-11-10 13:10:40</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"timestamp":{"in":-50,"type":"c","bp":true,"deviation_negative":"P200Y","deviation_positive":"P100Y"},"native":"2000 BP","labcode":"VOSON","estMinDate":-250,"estMaxDate":150}</raw>
+<temporal version="1" type="C14 Date">
+<date type="BPD" name="Before Present (1950) Date">
+<raw>2000</raw>
+<year>2000</year>
+</date>
+<duration type="DVN" name="Deviation Negative">
+<raw>P200Y</raw>
+<year>200</year>
+</duration>
+<duration type="DVP" name="Deviation Positive">
+<raw>P100Y</raw>
+<year>100</year>
+</duration>
+<property type="COD" name="Laboratory Code">
+VOSON</property>
+</temporal>
+</detail>
+<detail conceptID="0-1100" name="Lieu de la trouvaille" id="1100" basename="Lieu de la trouvaille" isRecordPointer="true">62</detail>
+<detail conceptID="0-1101" name="Type d'objet" id="1101" basename="Type d'objet" termID="9525" termConceptID="0-9525" ParentTerm="Utilitaires">Jardinage</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">47</detail>
+<detail conceptID="0-1116" name="Commentaires" id="1116" basename="Commentaires">Il s'agit d'une pelle</detail>
+<detail conceptID="0-1117" name="Date de la trouvaille" id="1117" basename="Date de la trouvaille">
+<raw>
+{"timestamp":{"in":"2012-10-15","type":"s"},"determination":"2","comment":"2012-10-15","estMinDate":2012.1015,"estMaxDate":2012.1015}</raw>
+<temporal version="1" type="Simple Date">
+<date type="DAT" name="ISO DateTime">
+<raw>2012-10-15</raw>
+<year>2012</year>
+<month>10</month>
+<day>15</day>
+</date>
+<property type="DET" name="Determination Type">
+Conjecture</property>
+<property type="COM" name="Comment">
+2012-10-15</property>
+</temporal>
+</detail>
+<detail conceptID="0-1120" name="Hauteur (cm)" id="1120" basename="Hauteur (cm)">153</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>99</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=99&amp;db=aliet_test_R</citeAs>
+<title>Edgar &lt;b&gt;Letracteur&lt;/b&gt;
+(3 Apr 1985)
+Male | Descendants.IsChildOf.IsSonOf - &gt; Lou &lt;b&gt;Ragan&lt;/b&gt;
+(invalid temporal object)
+Male</title>
+<added>2023-02-08 06:12:11</added>
+<modified>2023-11-10 09:23:05</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">60</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="3189" termConceptID="2-3189" ParentTerm="IsChildOf">IsSonOf</detail>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">47</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>69</id>
+<type id="103" conceptID="0000-103">Objet</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=69&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;Décoratifs&lt;/i&gt; (1700 to 1800)
+Trouvé le 15 Jan 2015 à Bois des Girondins, La Roche-sur-Yon</title>
+<added>2023-01-19 14:28:26</added>
+<modified>2023-11-10 09:09:20</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"start":{"earliest":"1700","latest":"1740"},"end":{"latest":"1800","earliest":"1760"},"estMinDate":1700,"estMaxDate":1800.1231}</raw>
+<temporal version="1" type="Date Range">
+<date type="TPQ" name="Terminus Post Quem">
+<raw>1700</raw>
+<year>1700</year>
+</date>
+<date type="PDB" name="Probable begin">
+<raw>1740</raw>
+<year>1740</year>
+</date>
+<date type="PDE" name="Probable end">
+<raw>1760</raw>
+<year>1760</year>
+</date>
+<date type="TAQ" name="Terminus Ante Quem">
+<raw>1800</raw>
+<year>1800</year>
+</date>
+</temporal>
+</detail>
+<detail conceptID="0-1100" name="Lieu de la trouvaille" id="1100" basename="Lieu de la trouvaille" isRecordPointer="true">70</detail>
+<detail conceptID="0-1101" name="Type d'objet" id="1101" basename="Type d'objet" termID="9522" termConceptID="0-9522" ParentTerm="Types d'objets vocab">Décoratifs</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">60</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">59</detail>
+<detail conceptID="0-1113" name="Expositions" id="1113" basename="Parcours" isRecordPointer="true">72</detail>
+<detail conceptID="0-1117" name="Date de la trouvaille" id="1117" basename="Date de la trouvaille">
+<raw>2015-01-15</raw>
+<year>2015</year>
+<month>1</month>
+<day>15</day>
+</detail>
+<detail conceptID="0-1120" name="Hauteur (cm)" id="1120" basename="Hauteur (cm)">10</detail>
+<reversePointer id="247" conceptID="2-247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS">72</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>47</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=47&amp;db=aliet_test_R</citeAs>
+<title>Lou &lt;b&gt;Ragan&lt;/b&gt;
+(invalid temporal object)
+Male</title>
+<added>2023-01-19 13:49:25</added>
+<modified>2023-11-10 09:09:20</modified>
+<workgroup id="2">alietteroux</workgroup>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Ragan</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Lou</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>
+Printemps 1960</raw>
+<temporal version="" type="">
+</temporal>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-0.880135 47.061729)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="414" termConceptID="2-414" ParentTerm="Gender">Male</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">28</detail>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">61</reversePointer>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">73</reversePointer>
+<relationship termID="9518" relatedRecordID="55" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">64</relationship>
+<relationship termID="9518" relatedRecordID="56" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">74</relationship>
+<relationship useInverse="1" termID="3189" relatedRecordID="60" term="IsSonOf" termConceptID="2-3189" inverse="IsParentOf" invTermID="3089" invTermConceptID="2-3089">99</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>77</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=77&amp;db=aliet_test_R</citeAs>
+<title>Gérard &lt;b&gt;Manvussa&lt;/b&gt;
+(20 Jan 1971)
+Male</title>
+<added>2023-01-23 07:55:53</added>
+<modified>2023-11-10 08:25:33</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Manvussa</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Gérard</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>
+{"timestamp":{"in":"1971-01-20","type":"s"},"comment":"1971-01-20","estMinDate":1971.012,"estMaxDate":1971.012}</raw>
+<temporal version="1" type="Simple Date">
+<date type="DAT" name="ISO DateTime">
+<raw>1971-01-20</raw>
+<year>1971</year>
+<month>01</month>
+<day>20</day>
+</date>
+<property type="COM" name="Comment">
+1971-01-20</property>
+</temporal>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-86.851047 21.161785)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="414" termConceptID="2-414" ParentTerm="Gender">Male</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">15</detail>
+<relationship termID="9518" relatedRecordID="55" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">78</relationship>
+<relationship useInverse="1" termID="3118" relatedRecordID="111" term="IsSiblingOf" termConceptID="2-3118" inverse="IsSiblingOf" invTermID="3118" invTermConceptID="2-3118">112</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>60</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=60&amp;db=aliet_test_R</citeAs>
+<title>Edgar &lt;b&gt;Letracteur&lt;/b&gt;
+(3 Apr 1985)
+Male</title>
+<added>2023-01-19 14:14:54</added>
+<modified>2023-11-10 08:23:25</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-18" name="Nom" id="18" basename="Given names">Edgar Letracteur</detail>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Letracteur</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Edgar</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>
+{"timestamp":{"in":"1985-04-03","type":"s"},"determination":"1","comment":"1985-04-03","estMinDate":1985.0403,"estMaxDate":1985.0403}</raw>
+<temporal version="1" type="Simple Date">
+<date type="DAT" name="ISO DateTime">
+<raw>1985-04-03</raw>
+<year>1985</year>
+<month>04</month>
+<day>03</day>
+</date>
+<property type="DET" name="Determination Type">
+Attested</property>
+<property type="COM" name="Comment">
+1985-04-03</property>
+</temporal>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-4.486009 48.390528)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="414" termConceptID="2-414" ParentTerm="Gender">Male</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">8</detail>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">69</reversePointer>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">61</reversePointer>
+<relationship termID="9518" relatedRecordID="56" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">63</relationship>
+<relationship termID="3189" relatedRecordID="47" term="IsSonOf" termConceptID="2-3189" inverse="IsParentOf" invTermID="3089" invTermConceptID="2-3089">99</relationship>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>121</id>
+<type id="52" conceptID="99-52">CMS Menu-Page</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=121&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;webpage:&lt;/i&gt;  &lt;b&gt;Discover&lt;/b&gt;   &lt;i&gt; &lt;/i&gt;</title>
+<added>2023-02-20 07:41:31</added>
+<modified>2023-11-09 15:40:50</modified>
+<workgroup id="1">Database Managers</workgroup>
+<detail conceptID="2-1" name="Menu label / page name" id="1" basename="Name or Title (please rename appropriately)">Discover</detail>
+<detail conceptID="2-3" name="Menu rollover description (optional)" id="3" basename="Short summary">Search functions to search and display contents of the database represented by/in this website</detail>
+<detail conceptID="2-4" name="Page content" id="4" basename="Extended description">[{&quot;name&quot;:&quot;Page&quot;,&quot;type&quot;:&quot;group&quot;,&quot;folder&quot;:true,&quot;children&quot;:[{&quot;name&quot;:&quot;Header&quot;,&quot;type&quot;:&quot;text&quot;,&quot;content&quot;:&quot;&lt;p&gt;This database uses 6 \&quot;record types\&quot; : these \&quot;record types\&quot; are listed below. Each \&quot;record type\&quot; contains records that can be viewed by clicking on the \&quot;record type\&quot;.&lt;/p&gt;&quot;,&quot;css&quot;:{&quot;display&quot;:&quot;block&quot;,&quot;border-style&quot;:&quot;none&quot;},&quot;dom_id&quot;:&quot;cms-content-36&quot;},{&quot;name&quot;:&quot;Discover&quot;,&quot;type&quot;:&quot;group&quot;,&quot;children&quot;:[{&quot;appid&quot;:&quot;heurist_SearchTree&quot;,&quot;name&quot;:&quot;Saved filters&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;minWidth&quot;:200,&quot;minHeight&quot;:300,&quot;flex&quot;:&quot; 1 150px&quot;,&quot;border-style&quot;:&quot;none&quot;,&quot;display&quot;:&quot;block&quot;},&quot;options&quot;:{&quot;allowed_svsIDs&quot;:&quot;4,6,7,5,8,9&quot;,&quot;searchTreeMode&quot;:&quot;0&quot;,&quot;simple_search_allowed&quot;:false,&quot;init_at_once&quot;:true,&quot;search_realm&quot;:&quot;sr3&quot;,&quot;search_page&quot;:&quot;&quot;,&quot;widget_id&quot;:&quot;cms-widget-38&quot;},&quot;dom_id&quot;:&quot;cms-widget-38&quot;},{&quot;appid&quot;:&quot;heurist_Map&quot;,&quot;name&quot;:&quot;Map and timeline&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;height&quot;:&quot;100&#37;&quot;,&quot;flex&quot;:&quot;2 1 300px&quot;},&quot;options&quot;:{&quot;leaflet&quot;:true,&quot;init_at_once&quot;:true,&quot;layout_params&quot;:{&quot;notimeline&quot;:false,&quot;nocluster&quot;:false,&quot;editstyle&quot;:true,&quot;map_rollover&quot;:true,&quot;controls&quot;:&quot;legend&quot;,&quot;legend&quot;:&quot;off&quot;,&quot;published&quot;:1,&quot;template&quot;:&quot;&quot;,&quot;basemap&quot;:&quot;&quot;},&quot;search_realm&quot;:&quot;sr3&quot;,&quot;rec_ID&quot;:528},&quot;dom_id&quot;:&quot;cms-widget-39&quot;},{&quot;appid&quot;:&quot;heurist_resultList&quot;,&quot;name&quot;:&quot;Standard filter result&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;minWidth&quot;:150,&quot;minHeight&quot;:300,&quot;flex&quot;:&quot;2 1 300px&quot;,&quot;display&quot;:&quot;block&quot;,&quot;border-style&quot;:&quot;none&quot;},&quot;options&quot;:{&quot;show_counter&quot;:false,&quot;show_viewmode&quot;:false,&quot;support_collection&quot;:false,&quot;support_reorder&quot;:false,&quot;show_inner_header&quot;:false,&quot;allow_record_content_view&quot;:false,&quot;blog_result_list&quot;:false,&quot;auto_select_first&quot;:false,&quot;recordview_onselect&quot;:&quot;inline&quot;,&quot;rendererExpandInFrame&quot;:false,&quot;show_url_as_link&quot;:false,&quot;view_mode&quot;:&quot;list&quot;,&quot;rendererExpandDetails&quot;:&quot;&quot;,&quot;field_for_ext_classes&quot;:&quot;0&quot;,&quot;show_toolbar&quot;:false,&quot;empty_remark&quot;:&quot;&quot;,&quot;placeholder_text&quot;:&quot;&quot;,&quot;init_at_once&quot;:true,&quot;search_realm&quot;:&quot;sr3&quot;,&quot;search_page&quot;:&quot;&quot;,&quot;widget_id&quot;:&quot;cms-widget-40&quot;},&quot;dom_id&quot;:&quot;cms-widget-40&quot;}],&quot;folder&quot;:true,&quot;css&quot;:{&quot;border-style&quot;:&quot;none&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;width&quot;:&quot;100&#37;&quot;,&quot;height&quot;:&quot;500px&quot;},&quot;dom_id&quot;:&quot;cms-content-37&quot;}],&quot;css&quot;:{},&quot;dom_id&quot;:&quot;cms-content-35&quot;}]</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-65</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-313</detail>
+<detail conceptID="99-948" name="Keywords" id="914" basename="CMS Keywords">Search, Filter, Facets, Facet search, Advanced search, Dynamic search</detail>
+<detail conceptID="99-952" name="Show page title (override global setting)" id="920" basename="Show page title" termID="5444" termConceptID="2-532" ParentTerm="Flag (yes, no, unknown)">Yes</detail>
+<detail conceptID="2-928" name="Type of page" id="928" basename="Type of page" termID="6253" termConceptID="2-6253" ParentTerm="Type of web page /menu">Menu + page in Heurist CMS</detail>
+<reversePointer id="912" conceptID="99-742" basename="CMS Menus" name="Top level menus">128</reversePointer>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>128</id>
+<type id="51" conceptID="99-51">CMS_Home</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=128&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;WEBSITE&lt;/i&gt; &lt;b&gt;Fictitious example database for R package &lt;i&gt;heuristr&lt;/i&gt; {R1}&lt;/b&gt; [ Menus: ]</title>
+<added>2023-02-20 07:41:34</added>
+<modified>2023-11-09 15:31:31</modified>
+<workgroup id="1">Database Managers</workgroup>
+<detail conceptID="2-1" name="Website title" id="1" basename="Name or Title (please rename appropriately)">Fictitious example database for R package &lt;i&gt;heuristr&lt;/i&gt;</detail>
+<detail conceptID="2-3" name="Website summary" id="3" basename="Short summary">This fictitious database aims to illustrate functions proposed by the R package &quot;rheurist&quot; : for more details, see https://github.com/alietteroux/rheurist.
+
+Remember to indicate the institution and/or project, target audience and nature of the content.</detail>
+<detail conceptID="2-4" name="Website home page content" id="4" basename="Extended description">[{&quot;name&quot;:&quot;Page&quot;,&quot;type&quot;:&quot;group&quot;,&quot;children&quot;:[{&quot;name&quot;:&quot;Content&quot;,&quot;type&quot;:&quot;text&quot;,&quot;css&quot;:{},&quot;content&quot;:&quot;&lt;p&gt;This fictitious database aims to illustrate functions proposed by the R package \&quot;heuristr\&quot; : for more details, see &lt;a title=\&quot;https://alietteroux.github.io/heuristr/\&quot; href=\&quot;https://alietteroux.github.io/heuristr/\&quot;&gt;https://alietteroux.github.io/heuristr/&lt;/a&gt;.&lt;/p&gt;\n&lt;p&gt;XML files of this database (exported from Heurist) can be downloaded on the folder “documents/data_example” of the &lt;a title=\&quot;https://github.com/alietteroux/heuristr\&quot; href=\&quot;https://github.com/alietteroux/heuristr\&quot;&gt;Github repository&lt;/a&gt;, or directly &lt;a href=\&quot;https://uncloud.univ-nantes.fr/index.php/s/QrgE4zeJfgP4R4Q\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;\n&lt;p&gt;&lt;img src=\&quot;./?db=aliet_test_R&amp;amp;file=9af072db3c8189321356f8de3d62f37090df6fad&amp;amp;fancybox=1\&quot; width=\&quot;600\&quot; data-id=\&quot;9af072db3c8189321356f8de3d62f37090df6fad\&quot; /&gt;&lt;/p&gt;&quot;,&quot;dom_id&quot;:&quot;cms-content-16&quot;}],&quot;folder&quot;:true,&quot;dom_id&quot;:&quot;cms-content-15&quot;,&quot;css&quot;:{}}]</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-190</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-318</detail>
+<detail conceptID="2-38" name="Logo image" id="38" basename="File(s) - uploaded or remote">
+<file>
+<id>6</id>
+<nonce>9d1649673fe626762d417411231b1cd1c2f329f9</nonce>
+<origName>logo_MSH_PL.png</origName>
+<mimeType>image/png</mimeType>
+<fileSize units="kB">53</fileSize>
+<date>2023-02-20 08:14:25</date>
+<url>https://heurist.huma-num.fr/heurist/?db=aliet_test_R&amp;file=9d1649673fe626762d417411231b1cd1c2f329f9</url>
+</file>
+</detail>
+<detail conceptID="2-39" name="Website icon" id="39" basename="Primary / preferred image">
+<file>
+<id>5</id>
+<nonce>045a9549cfe5534c4701ced77d50565a9674ca75</nonce>
+<origName>Health-8</origName>
+<mimeType>application/octet-stream</mimeType>
+<fileSize units="kB">2</fileSize>
+<date>2023-02-20 07:41:34</date>
+<url>https://heurist.huma-num.fr/heurist/?db=aliet_test_R&amp;file=045a9549cfe5534c4701ced77d50565a9674ca75</url>
+</file>
+</detail>
+<detail conceptID="3-1092" name="Custom website colour scheme" id="177" basename="Symbology">{&quot;cd_bg&quot;:&quot;#e0dfe0&quot;,&quot;cl_bg&quot;:&quot;#ffffff&quot;,&quot;cd_color&quot;:&quot;#333333&quot;,&quot;cd_input&quot;:&quot;#F4F2F4&quot;,&quot;cd_border&quot;:&quot;#95A7B7&quot;,&quot;cd_corner&quot;:&quot;0&quot;,&quot;ca_bg&quot;:&quot;#ed6d2cff&quot;,&quot;ca_color&quot;:&quot;#ffffff&quot;,&quot;ca_input&quot;:&quot;#ed6d2cff&quot;,&quot;ce_bg&quot;:&quot;#ECF1FB&quot;,&quot;ce_color&quot;:&quot;#6A7C99&quot;,&quot;ce_input&quot;:&quot;#ffffff&quot;,&quot;ce_readonly&quot;:&quot;#999999&quot;,&quot;ce_mandatory&quot;:&quot;#CC0000&quot;,&quot;ce_helper&quot;:&quot;#999999&quot;,&quot;sd_bg&quot;:&quot;#f2f2f2&quot;,&quot;sd_color&quot;:&quot;#555555&quot;,&quot;sh_bg&quot;:&quot;#f2f2f2&quot;,&quot;sh_color&quot;:&quot;#2b2b2b&quot;,&quot;sh_border&quot;:&quot;#999999&quot;,&quot;sa_bg&quot;:&quot;#95A7B7&quot;,&quot;sa_color&quot;:&quot;#212121&quot;,&quot;sa_border&quot;:&quot;#aaaaaa&quot;,&quot;sp_bg&quot;:&quot;#9CC4D9&quot;,&quot;sp_color&quot;:&quot;#ffffff&quot;,&quot;sp_border&quot;:&quot;#003eff&quot;}</detail>
+<detail conceptID="99-742" name="Top level menus" id="912" basename="CMS Menus" isRecordPointer="true">129</detail>
+<detail conceptID="99-742" name="Top level menus" id="912" basename="CMS Menus" isRecordPointer="true">121</detail>
+<detail conceptID="99-948" name="Keywords" id="914" basename="CMS Keywords">Digital Humanities, Heurist, Research, Database, Open Data</detail>
+<detail conceptID="99-952" name="Show menu label as title at top of the page" id="920" basename="Show page title" termID="5442" termConceptID="2-531" ParentTerm="Flag (yes, no, unknown)">No</detail>
+<detail conceptID="2-923" name="Main menu location" id="923" basename="Main menu location" termID="6251" termConceptID="2-6251" ParentTerm="Website main menu location">Top of page, horizontal (default)</detail>
+<detail conceptID="2-938" name="Selectable if submenu present" id="938" basename="Selectable if submenu present" termID="5442" termConceptID="2-531" ParentTerm="Flag (yes, no, unknown)">No</detail>
+<detail conceptID="2-941" name="Footer position fixed" id="941" basename="Footer fixed position" termID="5444" termConceptID="2-532" ParentTerm="Flag (yes, no, unknown)">Yes</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>63</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=63&amp;db=aliet_test_R</citeAs>
+<title>Edgar &lt;b&gt;Letracteur&lt;/b&gt;
+(3 Apr 1985)
+Male | est membre du 3 May 2015 - &gt; IAO - Institut Afficionados d'Objets</title>
+<added>2023-01-19 14:19:52</added>
+<modified>2023-02-23 06:55:58</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">56</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">60</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2015-05-03</raw>
+<year>2015</year>
+<month>5</month>
+<day>3</day>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>113</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=113&amp;db=aliet_test_R</citeAs>
+<title>Jade &lt;b&gt;Or&lt;/b&gt;
+(1976)
+Female | est membre du 1 May 2012 - &gt; OT - Objets Toujours</title>
+<added>2023-02-20 07:23:35</added>
+<modified>2023-02-23 06:55:40</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">108</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">111</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2012-05-01</raw>
+<year>2012</year>
+<month>5</month>
+<day>1</day>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>78</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=78&amp;db=aliet_test_R</citeAs>
+<title>Gérard &lt;b&gt;Manvussa&lt;/b&gt;
+(20 Jan 1971)
+Male | est membre du 1 Dec 2017 - &gt; LRO - Laboratoire de Recherche d'Objets</title>
+<added>2023-01-23 07:57:55</added>
+<modified>2023-02-23 06:55:28</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">55</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">77</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2017-12-01</raw>
+<year>2017</year>
+<month>12</month>
+<day>1</day>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>132</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=132&amp;db=aliet_test_R</citeAs>
+<title>Paul &lt;b&gt;Ochon&lt;/b&gt;
+(22 Jul 1975)
+Male | est membre du 1 May 2012 - &gt; OT - Objets Toujours</title>
+<added>2023-02-20 09:22:13</added>
+<modified>2023-02-23 06:55:18</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">108</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">131</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2012-05-01</raw>
+<year>2012</year>
+<month>5</month>
+<day>1</day>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>74</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=74&amp;db=aliet_test_R</citeAs>
+<title>Lou &lt;b&gt;Ragan&lt;/b&gt;
+(Printemps 1960)
+Male | est membre du 15 Oct 2012 - 15 Oct 2012 to 3 May 2015 &gt; IAO - Institut Afficionados d'Objets</title>
+<added>2023-01-19 14:39:47</added>
+<modified>2023-02-23 06:55:10</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">56</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">47</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2012-10-15</raw>
+<year>2012</year>
+<month>10</month>
+<day>15</day>
+</detail>
+<detail conceptID="2-11" name="End date/time" id="11" basename="End date">
+<raw>
+{"start":{"earliest":"2012-10-15"},"end":{"latest":"2015-05-03"},"estMinDate":2012.1015,"estMaxDate":2015.0503}</raw>
+<temporal version="1" type="Date Range">
+<date type="TPQ" name="Terminus Post Quem">
+<raw>2012-10-15</raw>
+<year>2012</year>
+<month>10</month>
+<day>15</day>
+</date>
+<date type="TAQ" name="Terminus Ante Quem">
+<raw>2015-05-03</raw>
+<year>2015</year>
+<month>05</month>
+<day>03</day>
+</date>
+</temporal>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>64</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=64&amp;db=aliet_test_R</citeAs>
+<title>Lou &lt;b&gt;Ragan&lt;/b&gt;
+(Printemps 1960)
+Male | est membre du 3 May 2015 - &gt; LRO - Laboratoire de Recherche d'Objets</title>
+<added>2023-01-19 14:21:07</added>
+<modified>2023-02-23 06:55:10</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">55</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="9518" termConceptID="0-9518" ParentTerm="0. My relationships">est membre du</detail>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">47</detail>
+<detail conceptID="2-10" name="Start date/time" id="10" basename="Start date">
+<raw>2015-05-03</raw>
+<year>2015</year>
+<month>5</month>
+<day>3</day>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>111</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=111&amp;db=aliet_test_R</citeAs>
+<title>Jade &lt;b&gt;Or&lt;/b&gt;
+(1976)
+Female</title>
+<added>2023-02-20 07:20:01</added>
+<modified>2023-02-23 05:55:40</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-18" name="Nom" id="18" basename="Given names">Jade Or</detail>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Or</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Jade</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>1976</raw>
+<year>1976</year>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.164559 46.455595)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="415" termConceptID="2-415" ParentTerm="Gender">Female</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">20</detail>
+<reversePointer id="1112" conceptID="0-1112" basename="Découvreur(s)" name="Découvreur(s)">114</reversePointer>
+<relationship termID="3118" relatedRecordID="77" term="IsSiblingOf" termConceptID="2-3118" inverse="IsSiblingOf" invTermID="3118" invTermConceptID="2-3118">112</relationship>
+<relationship termID="9518" relatedRecordID="108" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">113</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>131</id>
+<type id="102" conceptID="0000-102">Personne</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=131&amp;db=aliet_test_R</citeAs>
+<title>Paul &lt;b&gt;Ochon&lt;/b&gt;
+(22 Jul 1975)
+Male</title>
+<added>2023-02-20 09:21:12</added>
+<modified>2023-02-23 05:55:18</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-18" name="Nom" id="18" basename="Given names">Paul Ochon</detail>
+<detail conceptID="0-1094" name="Nom" id="1094" basename="Nom">Ochon</detail>
+<detail conceptID="0-1095" name="Prénom" id="1095" basename="Prénom">Paul</detail>
+<detail conceptID="0-1107" name="Date de naissance" id="1107" basename="Date de naissance">
+<raw>1975-07-22</raw>
+<year>1975</year>
+<month>7</month>
+<day>22</day>
+</detail>
+<detail conceptID="0-1114" name="Lieu de naissance" id="1114" basename="Lieu de naissance">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.413543 46.673118)</wkt>
+</geo>
+</detail>
+<detail conceptID="0-1115" name="Sexe" id="1115" basename="Sexe" termID="414" termConceptID="2-414" ParentTerm="Gender">Male</detail>
+<detail conceptID="0-1122" name="Nombre de publications" id="1122" basename="Nombre de publications">19</detail>
+<relationship termID="9518" relatedRecordID="108" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">132</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>116</id>
+<type id="106" conceptID="0000-106">Objet - Exposition</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=116&amp;db=aliet_test_R</citeAs>
+<title>Utilitaires.Cuisine.Récipients (1700 BCE ±100 years)
+Trouvé le 5 Feb 2020 à Estuaire du Lay, Vendée - Exposition de Brétignolles (2022-12-05 09 - 2022-12-09 16)</title>
+<added>2023-02-20 07:30:56</added>
+<modified>2023-02-20 12:08:50</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-10" name="Start date" id="10" basename="Start date">
+<raw>
+|VER=1|TYP=s|DAT=2022-12-05 09|DET=0|CLD=Gregorian</raw>
+<temporal version="" type="">
+</temporal>
+</detail>
+<detail conceptID="2-11" name="End date" id="11" basename="End date">
+<raw>
+|VER=1|TYP=s|DAT=2022-12-09 16|DET=0|CLD=Gregorian</raw>
+<temporal version="" type="">
+</temporal>
+</detail>
+<detail conceptID="9-78" name="Place" id="238" basename="Place" isRecordPointer="true">68</detail>
+<detail conceptID="2-247" id="247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS" isRecordPointer="true">114</detail>
+<reversePointer id="1113" conceptID="0-1113" basename="Parcours" name="Expositions">114</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>67</id>
+<type id="106" conceptID="0000-106">Objet - Exposition</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=67&amp;db=aliet_test_R</citeAs>
+<title>Utilitaires.Cuisine.Ustensiles (3000 BCE ±500 years)
+Trouvé le 3 May 2015 à Beaulieu, Mareuil-sur-Lay - Exposition de Brétignolles (6 Apr 2017 08:30 - 10 Apr 2017 17:30:30)</title>
+<added>2023-01-19 14:24:46</added>
+<modified>2023-02-20 12:08:50</modified>
+<workgroup id="2">alietteroux</workgroup>
+<detail conceptID="2-10" name="Start date" id="10" basename="Start date">
+<raw>
+{"timestamp":{"in":"2017-04-06 08:30","type":"s"},"determination":"1","estMinDate":2017.0406,"estMaxDate":2017.0406}</raw>
+<temporal version="1" type="Simple Date">
+<date type="DAT" name="ISO DateTime">
+<raw>2017-04-06 08:30</raw>
+<year>2017</year>
+<month>04</month>
+<day>06</day>
+<hour>08</hour>
+<minutes>30</minutes>
+</date>
+<property type="DET" name="Determination Type">
+Attested</property>
+</temporal>
+</detail>
+<detail conceptID="2-11" name="End date" id="11" basename="End date">
+<raw>
+{"timestamp":{"in":"2017-04-10 17:30:30","type":"s"},"determination":"1","estMinDate":2017.041,"estMaxDate":2017.041}</raw>
+<temporal version="1" type="Simple Date">
+<date type="DAT" name="ISO DateTime">
+<raw>2017-04-10 17:30:30</raw>
+<year>2017</year>
+<month>04</month>
+<day>10</day>
+<hour>17</hour>
+<minutes>30</minutes>
+<seconds>30</seconds>
+</date>
+<property type="DET" name="Determination Type">
+Attested</property>
+</temporal>
+</detail>
+<detail conceptID="9-78" name="Place" id="238" basename="Place" isRecordPointer="true">68</detail>
+<detail conceptID="2-247" id="247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS" isRecordPointer="true">61</detail>
+<reversePointer id="1113" conceptID="0-1113" basename="Parcours" name="Expositions">61</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>68</id>
+<type id="12" conceptID="3-1009">Place</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=68&amp;db=aliet_test_R</citeAs>
+<title>Exposition de Brétignolles</title>
+<added>2023-01-19 14:26:06</added>
+<modified>2023-02-20 12:08:50</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-1" name="Place name" id="1" basename="Name or Title (please rename appropriately)">Exposition de Brétignolles</detail>
+<detail conceptID="2-26" name="Country" id="26" basename="Country" termID="110" termConceptID="2-110" ParentTerm="Country">France</detail>
+<detail conceptID="2-28" name="Location (mappable)" id="28" basename="Mappable location (geospatial)">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.853889 46.628611)</wkt>
+</geo>
+</detail>
+<detail conceptID="3-1068" name="Place type" id="133" basename="Place type" termID="5333" termConceptID="2-5333" ParentTerm="Thematic">Cultural venue</detail>
+<detail conceptID="1125-101" name="Locational certainty" id="227" basename="Locational certainty" termID="5343" termConceptID="1125-3341" ParentTerm="Certainty of localisation">2. Probable location</detail>
+<reversePointer id="238" conceptID="9-78" basename="Place" name="Place">67</reversePointer>
+<reversePointer id="238" conceptID="9-78" basename="Place" name="Place">116</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>112</id>
+<type id="1" conceptID="2-1">Record relationship</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=112&amp;db=aliet_test_R</citeAs>
+<title>Jade &lt;b&gt;Or&lt;/b&gt;
+(1976)
+Female | IsSiblingOf - &gt; Gérard &lt;b&gt;Manvussa&lt;/b&gt;
+(20 Jan 1971)
+Male</title>
+<added>2023-02-20 07:22:08</added>
+<modified>2023-02-20 10:37:02</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-7" name="Source record" id="7" basename="Source record pointer INTERNAL USE ONLY" isRecordPointer="true">111</detail>
+<detail conceptID="2-6" name="Relationship type" id="6" basename="Relationship type INTERNAL USE ONLY" termID="3118" termConceptID="2-3118" ParentTerm="4. Family">IsSiblingOf</detail>
+<detail conceptID="2-5" name="Target record" id="5" basename="Target record pointer INTERNAL USE ONLY" isRecordPointer="true">77</detail>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>127</id>
+<type id="52" conceptID="99-52">CMS Menu-Page</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=127&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;webpage:&lt;/i&gt; &lt;b&gt;Webpage sample&lt;/b&gt; &lt;i&gt; &lt;/i&gt;</title>
+<added>2023-02-20 07:41:31</added>
+<modified>2023-02-20 08:41:31</modified>
+<workgroup id="1">Database Managers</workgroup>
+<detail conceptID="2-1" name="Menu label / page name" id="1" basename="Name or Title (please rename appropriately)">Webpage sample</detail>
+<detail conceptID="2-3" name="Menu rollover description (optional)" id="3" basename="Short summary">Search functions to search and display contents of the database represented by/in this website</detail>
+<detail conceptID="2-4" name="Page content" id="4" basename="Extended description">[{&quot;name&quot;:&quot;Page&quot;,&quot;type&quot;:&quot;group&quot;,&quot;folder&quot;:true,&quot;children&quot;:[{&quot;name&quot;:&quot;Header&quot;,&quot;type&quot;:&quot;text&quot;,&quot;content&quot;:&quot;&lt;p&gt;This is an unconfigured page. Remove &lt;strong&gt; these instructions &lt;/strong&gt;, or replace them with your instructions for users.&lt;/p&gt;\n&lt;p&gt;This page is set up as a container for database searches. Select [Insert] in menu (gear icon or context menu in tree on the left) to add text elements and widgets: search, results list and visualisation (map, timeline, network diagram, report etc.). &lt;/p&gt;\n&lt;p&gt;Click on [Style] in this menu to modify appearance and configure parameters for each of the components.&lt;/p&gt;&quot;,&quot;css&quot;:{&quot;display&quot;:&quot;block&quot;,&quot;border-style&quot;:&quot;none&quot;}},{&quot;name&quot;:&quot;Discover&quot;,&quot;type&quot;:&quot;group&quot;,&quot;children&quot;:[{&quot;appid&quot;:&quot;heurist_SearchTree&quot;,&quot;name&quot;:&quot;Saved filters&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;minWidth&quot;:200,&quot;minHeight&quot;:300,&quot;flex&quot;:&quot; 1 150px&quot;},&quot;options&quot;:{&quot;allowed_UGrpID&quot;:&quot;4&quot;,&quot;searchTreeMode&quot;:&quot;1&quot;,&quot;init_at_once&quot;:true,&quot;search_realm&quot;:&quot;sr3&quot;,&quot;rec_ID&quot;:528}},{&quot;appid&quot;:&quot;heurist_Map&quot;,&quot;name&quot;:&quot;Map and timeline&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;height&quot;:&quot;100&#37;&quot;,&quot;flex&quot;:&quot;2 1 300px&quot;},&quot;options&quot;:{&quot;leaflet&quot;:true,&quot;init_at_once&quot;:true,&quot;layout_params&quot;:{&quot;notimeline&quot;:false,&quot;nocluster&quot;:false,&quot;editstyle&quot;:true,&quot;map_rollover&quot;:true,&quot;controls&quot;:&quot;legend&quot;,&quot;legend&quot;:&quot;off&quot;,&quot;published&quot;:1,&quot;template&quot;:&quot;&quot;,&quot;basemap&quot;:&quot;&quot;},&quot;search_realm&quot;:&quot;sr3&quot;,&quot;rec_ID&quot;:528}},{&quot;appid&quot;:&quot;heurist_resultList&quot;,&quot;name&quot;:&quot;Standard filter result&quot;,&quot;css&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;minWidth&quot;:150,&quot;minHeight&quot;:300,&quot;flex&quot;:&quot;2 1 300px&quot;},&quot;options&quot;:{&quot;search_realm&quot;:&quot;sr3&quot;,&quot;rec_ID&quot;:528}}],&quot;folder&quot;:true,&quot;css&quot;:{&quot;border-style&quot;:&quot;none&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;width&quot;:&quot;100&#37;&quot;,&quot;height&quot;:&quot;500px&quot;}}],&quot;css&quot;:{}}]</detail>
+<detail conceptID="99-948" name="Keywords" id="914" basename="CMS Keywords">Search, Filter, Facets, Facet search, Advanced search, Dynamic search</detail>
+<detail conceptID="99-952" name="Show page title (override global setting)" id="920" basename="Show page title" termID="5444" termConceptID="2-532" ParentTerm="Flag (yes, no, unknown)">Yes</detail>
+<detail conceptID="2-928" name="Type of page" id="928" basename="Type of page" termID="6254" termConceptID="2-6254" ParentTerm="Type of web page /menu">Standalone web page</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-65</detail>
+<detail conceptID="2-36" name="Original ID" id="36" basename="Original ID">2-342</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>72</id>
+<type id="106" conceptID="0000-106">Objet - Exposition</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=72&amp;db=aliet_test_R</citeAs>
+<title>Décoratifs (1740 to 1760)
+Trouvé le 15 Jan 2015 à Bois des Girondins, La Roche-sur-Yon - Festival de Mervent, Vendée (15 Aug 2016 - 15 Dec 2016)</title>
+<added>2023-01-19 14:33:21</added>
+<modified>2023-02-20 08:39:24</modified>
+<workgroup id="2">alietteroux</workgroup>
+<detail conceptID="2-10" name="Start date" id="10" basename="Start date">
+<raw>2016-08-15</raw>
+<year>2016</year>
+<month>8</month>
+<day>15</day>
+</detail>
+<detail conceptID="2-11" name="End date" id="11" basename="End date">
+<raw>2016-12-15</raw>
+<year>2016</year>
+<month>12</month>
+<day>15</day>
+</detail>
+<detail conceptID="9-78" name="Place" id="238" basename="Place" isRecordPointer="true">66</detail>
+<detail conceptID="2-247" id="247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS" isRecordPointer="true">69</detail>
+<reversePointer id="1113" conceptID="0-1113" basename="Parcours" name="Expositions">69</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>65</id>
+<type id="106" conceptID="0000-106">Objet - Exposition</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=65&amp;db=aliet_test_R</citeAs>
+<title>Utilitaires.Cuisine.Ustensiles (3000 BCE ±500 years)
+Trouvé le 3 May 2015 à Beaulieu, Mareuil-sur-Lay - Festival de Mervent, Vendée (2015-12-01 14 - 1 Dec 2015 16:30)</title>
+<added>2023-01-19 14:21:36</added>
+<modified>2023-02-20 08:39:24</modified>
+<workgroup id="2">alietteroux</workgroup>
+<detail conceptID="2-10" name="Start date" id="10" basename="Start date">
+<raw>
+|VER=1|TYP=s|DAT=2015-12-01 14|DET=0|CLD=Gregorian</raw>
+<temporal version="" type="">
+</temporal>
+</detail>
+<detail conceptID="2-11" name="End date" id="11" basename="End date">
+<raw>2015-12-01 16:30</raw>
+<year>2015</year>
+<month>12</month>
+<day>1</day>
+<hour>16</hour>
+<minutes>30</minutes>
+<seconds>00</seconds>
+</detail>
+<detail conceptID="9-78" name="Place" id="238" basename="Place" isRecordPointer="true">66</detail>
+<detail conceptID="2-247" id="247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS" isRecordPointer="true">61</detail>
+<reversePointer id="1113" conceptID="0-1113" basename="Parcours" name="Expositions">61</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>66</id>
+<type id="12" conceptID="3-1009">Place</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=66&amp;db=aliet_test_R</citeAs>
+<title>Festival de Mervent, Vendée</title>
+<added>2023-01-19 14:22:53</added>
+<modified>2023-02-20 08:39:24</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-1" name="Place name" id="1" basename="Name or Title (please rename appropriately)">Festival de Mervent, Vendée</detail>
+<detail conceptID="2-26" name="Country" id="26" basename="Country" termID="110" termConceptID="2-110" ParentTerm="Country">France</detail>
+<detail conceptID="2-28" name="Location (mappable)" id="28" basename="Mappable location (geospatial)">
+<geo>
+<type>point</type>
+<wkt>POINT(-0.76561 46.534892)</wkt>
+</geo>
+</detail>
+<detail conceptID="3-1068" name="Place type" id="133" basename="Place type" termID="5333" termConceptID="2-5333" ParentTerm="Thematic">Cultural venue</detail>
+<detail conceptID="1125-101" name="Locational certainty" id="227" basename="Locational certainty" termID="5343" termConceptID="1125-3341" ParentTerm="Certainty of localisation">2. Probable location</detail>
+<reversePointer id="238" conceptID="9-78" basename="Place" name="Place">65</reversePointer>
+<reversePointer id="238" conceptID="9-78" basename="Place" name="Place">72</reversePointer>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>129</id>
+<type id="52" conceptID="99-52">CMS Menu-Page</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=129&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;webpage:&lt;/i&gt; &lt;b&gt;The database&lt;/b&gt; &lt;i&gt; &lt;/i&gt;</title>
+<added>2023-02-20 08:21:37</added>
+<modified>2023-02-20 08:21:58</modified>
+<workgroup id="1">Database Managers</workgroup>
+<detail conceptID="2-1" name="Menu label / page name" id="1" basename="Name or Title (please rename appropriately)">The database</detail>
+<detail conceptID="2-928" name="Type of page" id="928" basename="Type of page" termID="6253" termConceptID="2-6253" ParentTerm="Type of web page /menu">Menu + page in Heurist CMS</detail>
+<detail conceptID="99-952" name="Show page title (override global setting)" id="920" basename="Show page title" termID="5442" termConceptID="2-531" ParentTerm="Flag (yes, no, unknown)">No</detail>
+<detail conceptID="2-4" name="Page content" id="4" basename="Extended description">[{&quot;name&quot;:&quot;Page&quot;,&quot;type&quot;:&quot;group&quot;,&quot;children&quot;:[{&quot;name&quot;:&quot;Default Text&quot;,&quot;type&quot;:&quot;text&quot;,&quot;content&quot;:&quot;&lt;p&gt;This fictitious database aims to illustrate functions proposed by the R package \&quot;rheurist\&quot; : for more details, see &lt;a href=\&quot;https://github.com/alietteroux/rheurist\&quot;&gt;https://github.com/alietteroux/rheurist&lt;/a&gt;.&lt;/p&gt;\n&lt;p&gt;XML files of this database (exported from Heurist) can be downloaded on this Github repository.&lt;/p&gt;&quot;,&quot;dom_id&quot;:&quot;cms-content-28&quot;,&quot;css&quot;:{}}],&quot;folder&quot;:true,&quot;dom_id&quot;:&quot;cms-content-27&quot;,&quot;css&quot;:{}}]</detail>
+<reversePointer id="912" conceptID="99-742" basename="CMS Menus" name="Top level menus">128</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>114</id>
+<type id="103" conceptID="0000-103">Objet</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=114&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;Utilitaires.Cuisine.Récipients&lt;/i&gt; (1700 BCE ±100 years)
+Trouvé le 5 Feb 2020 à Estuaire du Lay, Vendée</title>
+<added>2023-02-20 07:27:50</added>
+<modified>2023-02-20 07:38:14</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"timestamp":{"in":-1700,"type":"c","bp":false,"deviation":"P100Y"},"native":"1700 BCE","labcode":"blabla","estMinDate":-1800,"estMaxDate":-1600}</raw>
+<temporal version="1" type="C14 Date">
+<date type="BCE" name="Before Current Era">
+<raw>1700</raw>
+<year>1700</year>
+</date>
+<duration type="DEV" name="Standard Deviation">
+<raw>P100Y</raw>
+<year>100</year>
+</duration>
+<property type="COD" name="Laboratory Code">
+blabla</property>
+</temporal>
+</detail>
+<detail conceptID="0-1100" name="Lieu de la trouvaille" id="1100" basename="Lieu de la trouvaille" isRecordPointer="true">76</detail>
+<detail conceptID="0-1101" name="Type d'objet" id="1101" basename="Type d'objet" termID="9526" termConceptID="0-9526" ParentTerm="Cuisine">Récipients</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">59</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">111</detail>
+<detail conceptID="0-1113" name="Expositions" id="1113" basename="Parcours" isRecordPointer="true">116</detail>
+<detail conceptID="0-1117" name="Date de la trouvaille" id="1117" basename="Date de la trouvaille">
+<raw>2020-02-05</raw>
+<year>2020</year>
+<month>2</month>
+<day>5</day>
+</detail>
+<detail conceptID="0-1120" name="Hauteur (cm)" id="1120" basename="Hauteur (cm)">20</detail>
+<reversePointer id="247" conceptID="2-247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS">116</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>61</id>
+<type id="103" conceptID="0000-103">Objet</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=61&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;Utilitaires.Cuisine.Ustensiles&lt;/i&gt; (3000 BCE ±500 years)
+Trouvé le 3 May 2015 à Beaulieu, Mareuil-sur-Lay</title>
+<added>2023-01-19 14:15:51</added>
+<modified>2023-02-20 07:37:14</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"timestamp":{"in":-3000,"type":"c","bp":false,"deviation":"P500Y"},"native":"3000 BCE","labcode":"VOSON","estMinDate":-3500,"estMaxDate":-2500}</raw>
+<temporal version="1" type="C14 Date">
+<date type="BCE" name="Before Current Era">
+<raw>3000</raw>
+<year>3000</year>
+</date>
+<duration type="DEV" name="Standard Deviation">
+<raw>P500Y</raw>
+<year>500</year>
+</duration>
+<property type="COD" name="Laboratory Code">
+VOSON</property>
+</temporal>
+</detail>
+<detail conceptID="0-1100" name="Lieu de la trouvaille" id="1100" basename="Lieu de la trouvaille" isRecordPointer="true">62</detail>
+<detail conceptID="0-1101" name="Type d'objet" id="1101" basename="Type d'objet" termID="9527" termConceptID="0-9527" ParentTerm="Cuisine">Ustensiles</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">60</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">47</detail>
+<detail conceptID="0-1113" name="Expositions" id="1113" basename="Parcours" isRecordPointer="true">65</detail>
+<detail conceptID="0-1113" name="Expositions" id="1113" basename="Parcours" isRecordPointer="true">67</detail>
+<detail conceptID="0-1116" name="Commentaires" id="1116" basename="Commentaires">Il s'agit d'un set de fourchettes et de couteaux.
+Les fourchettes sont en bois et sont en bon état.</detail>
+<detail conceptID="0-1117" name="Date de la trouvaille" id="1117" basename="Date de la trouvaille">
+<raw>2015-05-03</raw>
+<year>2015</year>
+<month>5</month>
+<day>3</day>
+</detail>
+<detail conceptID="0-1120" name="Hauteur (cm)" id="1120" basename="Hauteur (cm)">8</detail>
+<reversePointer id="247" conceptID="2-247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS">65</reversePointer>
+<reversePointer id="247" conceptID="2-247" basename="Parent entity RESERVED: DO NOT ADD TO FORMS">67</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>75</id>
+<type id="103" conceptID="0000-103">Objet</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=75&amp;db=aliet_test_R</citeAs>
+<title>&lt;i&gt;Utilitaires&lt;/i&gt; (1900 ±20 years)
+Trouvé le 2019 à Estuaire du Lay, Vendée</title>
+<added>2023-01-19 14:41:15</added>
+<modified>2023-02-20 07:36:55</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"timestamp":{"in":"1900","deviation":"P20Y","type":"f"},"determination":"3","estMinDate":1880,"estMaxDate":1920}</raw>
+<temporal version="1" type="Approximate Date">
+<date type="DAT" name="ISO DateTime">
+<raw>1900</raw>
+<year>1900</year>
+</date>
+<date type="TPQ" name="Terminus Post Quem">
+<raw>1880</raw>
+<year>1880</year>
+</date>
+<date type="TAQ" name="Terminus Ante Quem">
+<raw>1920</raw>
+<year>1920</year>
+</date>
+<duration type="RNG" name="Range">
+<raw>P20Y</raw>
+<year>20</year>
+</duration>
+<property type="DET" name="Determination Type">
+Measurement</property>
+</temporal>
+</detail>
+<detail conceptID="0-1100" name="Lieu de la trouvaille" id="1100" basename="Lieu de la trouvaille" isRecordPointer="true">76</detail>
+<detail conceptID="0-1101" name="Type d'objet" id="1101" basename="Type d'objet" termID="9521" termConceptID="0-9521" ParentTerm="Types d'objets vocab">Utilitaires</detail>
+<detail conceptID="0-1112" name="Découvreur(s)" id="1112" basename="Découvreur(s)" isRecordPointer="true">59</detail>
+<detail conceptID="0-1116" name="Commentaires" id="1116" basename="Commentaires">L'ensemble est hétéroclite.
+
+Aussi, difficilement définissable.</detail>
+<detail conceptID="0-1117" name="Date de la trouvaille" id="1117" basename="Date de la trouvaille">
+<raw>2019</raw>
+<year>2019</year>
+</detail>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>108</id>
+<type id="104" conceptID="0000-104">Laboratoire</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=108&amp;db=aliet_test_R</citeAs>
+<title>OT - Objets Toujours</title>
+<added>2023-02-20 07:14:17</added>
+<modified>2023-02-20 07:17:54</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>2012-05-01</raw>
+<year>2012</year>
+<month>5</month>
+<day>1</day>
+</detail>
+<detail conceptID="0-1102" name="Nom du laboratoire" id="1102" basename="Nom laboratoire">OT - Objets Toujours</detail>
+<detail conceptID="0-1118" name="Logo" id="1118" basename="Logo">
+<file>
+<id>3</id>
+<nonce>11dbda0ecd0029a73c3e327be7e1467a49aa8056</nonce>
+<origName>logo_labo_OT.png</origName>
+<mimeType>image/png</mimeType>
+<fileSize units="kB">2</fileSize>
+<date>2023-02-20 07:17:52</date>
+<url>https://heurist.huma-num.fr/heurist/?db=aliet_test_R&amp;file=11dbda0ecd0029a73c3e327be7e1467a49aa8056</url>
+</file>
+</detail>
+<detail conceptID="0-1121" name="Discipline(s)" id="1121" basename="Discipline(s)" termID="6314" termConceptID="2-22" ParentTerm="Discipline">Archaeology</detail>
+<relationship termID="9519" relatedRecordID="59" term="comprend" termConceptID="0-9519" inverse="est membre du" invTermID="9518" invTermConceptID="0-9518">109</relationship>
+<relationship useInverse="1" termID="9518" relatedRecordID="111" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">113</relationship>
+<relationship useInverse="1" termID="9518" relatedRecordID="131" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">132</relationship>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>55</id>
+<type id="104" conceptID="0000-104">Laboratoire</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=55&amp;db=aliet_test_R</citeAs>
+<title>LRO - Laboratoire de Recherche d'Objets</title>
+<added>2023-01-19 14:10:41</added>
+<modified>2023-02-20 07:13:10</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>2017-12-01</raw>
+<year>2017</year>
+<month>12</month>
+<day>1</day>
+</detail>
+<detail conceptID="0-1102" name="Nom du laboratoire" id="1102" basename="Nom laboratoire">LRO - Laboratoire de Recherche d'Objets</detail>
+<detail conceptID="0-1118" name="Logo" id="1118" basename="Logo">
+<file>
+<id>2</id>
+<nonce>1c21c313d58abf1443923f88681e2816efe808ae</nonce>
+<origName>logo_labo_LRO.png</origName>
+<mimeType>image/png</mimeType>
+<fileSize units="kB">1</fileSize>
+<date>2023-02-08 06:08:50</date>
+<url>https://heurist.huma-num.fr/heurist/?db=aliet_test_R&amp;file=1c21c313d58abf1443923f88681e2816efe808ae</url>
+</file>
+</detail>
+<detail conceptID="0-1121" name="Discipline(s)" id="1121" basename="Discipline(s)" termID="6314" termConceptID="2-22" ParentTerm="Discipline">Archaeology</detail>
+<relationship useInverse="1" termID="9518" relatedRecordID="47" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">64</relationship>
+<relationship useInverse="1" termID="9518" relatedRecordID="59" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">71</relationship>
+<relationship useInverse="1" termID="9518" relatedRecordID="77" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">78</relationship>
+</record>
+<record visibility="public" visnote="no login required" selected="no" depth="0">
+<id>56</id>
+<type id="104" conceptID="0000-104">Laboratoire</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=56&amp;db=aliet_test_R</citeAs>
+<title>IAO - Institut Afficionados d'Objets</title>
+<added>2023-01-19 14:11:26</added>
+<modified>2023-02-20 07:12:56</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="0-1098" name="Date de création" id="1098" basename="Date de création">
+<raw>
+{"start":{"earliest":"1990-01-01"},"end":{"latest":"1990-01-31"},"estMinDate":1990.0101,"estMaxDate":1990.0131}</raw>
+<temporal version="1" type="Date Range">
+<date type="TPQ" name="Terminus Post Quem">
+<raw>1990-01-01</raw>
+<year>1990</year>
+<month>01</month>
+<day>01</day>
+</date>
+<date type="TAQ" name="Terminus Ante Quem">
+<raw>1990-01-31</raw>
+<year>1990</year>
+<month>01</month>
+<day>31</day>
+</date>
+</temporal>
+</detail>
+<detail conceptID="0-1102" name="Nom du laboratoire" id="1102" basename="Nom laboratoire">IAO - Institut Afficionados d'Objets</detail>
+<detail conceptID="0-1104" name="Date de fin" id="1104" basename="Date de fin">
+<raw>2018</raw>
+<year>2018</year>
+</detail>
+<detail conceptID="0-1118" name="Logo" id="1118" basename="Logo">
+<file>
+<id>1</id>
+<nonce>840c8ff9cf99cf29958338c197da9cb028f5b613</nonce>
+<origName>logo_labo_IAO.png</origName>
+<mimeType>image/png</mimeType>
+<fileSize units="kB">1</fileSize>
+<date>2023-02-08 06:08:31</date>
+<url>https://heurist.huma-num.fr/heurist/?db=aliet_test_R&amp;file=840c8ff9cf99cf29958338c197da9cb028f5b613</url>
+</file>
+</detail>
+<detail conceptID="0-1121" name="Discipline(s)" id="1121" basename="Discipline(s)" termID="6314" termConceptID="2-22" ParentTerm="Discipline">Archaeology</detail>
+<detail conceptID="0-1121" name="Discipline(s)" id="1121" basename="Discipline(s)" termID="6323" termConceptID="2-31" ParentTerm="Discipline">Computer Science</detail>
+<relationship useInverse="1" termID="9518" relatedRecordID="60" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">63</relationship>
+<relationship useInverse="1" termID="9518" relatedRecordID="47" term="est membre du" termConceptID="0-9518" inverse="comprend" invTermID="9519" invTermConceptID="0-9519">74</relationship>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>76</id>
+<type id="12" conceptID="3-1009">Place</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=76&amp;db=aliet_test_R</citeAs>
+<title>Estuaire du Lay, Vendée</title>
+<added>2023-01-19 14:42:27</added>
+<modified>2023-01-24 12:50:30</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-1" name="Place name" id="1" basename="Name or Title (please rename appropriately)">Estuaire du Lay, Vendée</detail>
+<detail conceptID="2-26" name="Country" id="26" basename="Country" termID="110" termConceptID="2-110" ParentTerm="Country">France</detail>
+<detail conceptID="2-28" name="Location (mappable)" id="28" basename="Mappable location (geospatial)">
+<geo>
+<type>polygon</type>
+<wkt>POLYGON((-1.316729 46.3353,-1.314411 46.328301,-1.305571 46.31958,-1.29673 46.318631,-1.299734 46.326877,-1.30909 46.332038,-1.316729 46.3353))</wkt>
+</geo>
+</detail>
+<detail conceptID="3-1068" name="Place type" id="133" basename="Place type" termID="6303" termConceptID="3-5063" ParentTerm="Conceptual">Physical</detail>
+<detail conceptID="1125-101" name="Locational certainty" id="227" basename="Locational certainty" termID="5342" termConceptID="1125-3340" ParentTerm="Certainty of localisation">1. High confidence</detail>
+<reversePointer id="1100" conceptID="0-1100" basename="Lieu de la trouvaille" name="Lieu de la trouvaille">75</reversePointer>
+<reversePointer id="1100" conceptID="0-1100" basename="Lieu de la trouvaille" name="Lieu de la trouvaille">114</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>62</id>
+<type id="12" conceptID="3-1009">Place</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=62&amp;db=aliet_test_R</citeAs>
+<title>Beaulieu, Mareuil-sur-Lay</title>
+<added>2023-01-19 14:17:52</added>
+<modified>2023-01-19 15:36:16</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-1" name="Place name" id="1" basename="Name or Title (please rename appropriately)">Beaulieu, Mareuil-sur-Lay</detail>
+<detail conceptID="2-26" name="Country" id="26" basename="Country" termID="110" termConceptID="2-110" ParentTerm="Country">France</detail>
+<detail conceptID="2-28" name="Location (mappable)" id="28" basename="Mappable location (geospatial)">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.22474 46.527361)</wkt>
+</geo>
+</detail>
+<detail conceptID="3-1068" name="Place type" id="133" basename="Place type" termID="5324" termConceptID="2-5324" ParentTerm="Administrative">Locality</detail>
+<detail conceptID="1125-101" name="Locational certainty" id="227" basename="Locational certainty" termID="5342" termConceptID="1125-3340" ParentTerm="Certainty of localisation">1. High confidence</detail>
+<reversePointer id="1100" conceptID="0-1100" basename="Lieu de la trouvaille" name="Lieu de la trouvaille">61</reversePointer>
+<reversePointer id="1100" conceptID="0-1100" basename="Lieu de la trouvaille" name="Lieu de la trouvaille">73</reversePointer>
+</record>
+<record visibility="viewable" visnote="logged in users" selected="no" depth="0">
+<id>70</id>
+<type id="12" conceptID="3-1009">Place</type>
+<citeAs>https://heurist.huma-num.fr/heurist/?recID=70&amp;db=aliet_test_R</citeAs>
+<title>Bois des Girondins, La Roche-sur-Yon</title>
+<added>2023-01-19 14:29:19</added>
+<modified>2023-01-19 15:30:57</modified>
+<workgroup id="0">public</workgroup>
+<detail conceptID="2-1" name="Place name" id="1" basename="Name or Title (please rename appropriately)">Bois des Girondins, La Roche-sur-Yon</detail>
+<detail conceptID="2-26" name="Country" id="26" basename="Country" termID="110" termConceptID="2-110" ParentTerm="Country">France</detail>
+<detail conceptID="2-28" name="Location (mappable)" id="28" basename="Mappable location (geospatial)">
+<geo>
+<type>point</type>
+<wkt>POINT(-1.3693 46.715296)</wkt>
+</geo>
+</detail>
+<detail conceptID="3-1068" name="Place type" id="133" basename="Place type" termID="5324" termConceptID="2-5324" ParentTerm="Administrative">Locality</detail>
+<detail conceptID="1125-101" name="Locational certainty" id="227" basename="Locational certainty" termID="5342" termConceptID="1125-3340" ParentTerm="Certainty of localisation">1. High confidence</detail>
+<reversePointer id="1100" conceptID="0-1100" basename="Lieu de la trouvaille" name="Lieu de la trouvaille">69</reversePointer>
+</record>
+</records>
+<recordCount>37</recordCount>
+</hml>

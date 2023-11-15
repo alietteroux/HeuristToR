@@ -54,6 +54,7 @@ hr_import <- function (data.file,structure.file,rename.tab.col){
   d.data <- gsub("&lt;/b&gt;","",d.data) #- </b>
   d.data <- gsub("&lt;i&gt;","",d.data) #- <i>
   d.data <- gsub("&lt;/i&gt;","",d.data) #- </i>
+  d.data <- gsub("&quot;","\"",d.data) #- a quote !
   d.data <- gsub("&gt;","",d.data) #- > (especially in relationship records'titles)
 
   ###- We remove empty tags (For instance, I've found empty tags <minutes/> and <seconds/> when I wrote "Printemps 1960" in a "temporal" field)
